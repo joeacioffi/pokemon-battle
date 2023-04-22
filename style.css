@@ -1,0 +1,51 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  
+  .pokemon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  .pokemon {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0;
+    margin: 0 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .vs {
+    font-size: 3rem;
+    margin: 0 2rem;
+  }
+  
+  .result-container {
+    margin-bottom: 2rem;
+  }
+  
+  .result {
+    font-size: 1.5rem;
+  }
+  
+  .battle-button {
+    font-size: 1.5rem;
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
