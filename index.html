@@ -5,20 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon App</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <h1>Pokemon Battle</h1>
+      <h1>Pokemon Battle!</h1>
       <div class="pokemon-container">
-        <div class="pokemon" id="pokemon1"></div>
-        <div class="vs">VS</div>
-        <div class="pokemon" id="pokemon2"></div>
-      </div>
+        <div class="pokemon" id="pokemon1">
+          <div class="pokemon-sprite"></div>
+          <div class="pokemon-name"></div>
+          <div class="pokemon-stats"></div>
+        </div>
+        <div class="vs">
+          <h2>VS</h2>
+        </div>
+        <div class="pokemon" id="pokemon2">
+          <div class="pokemon-sprite"></div>
+          <div class="pokemon-name"></div>
+          <div class="pokemon-stats"></div>
+        </div>
+        </div>
       <div class="result-container">
         <p class="result"></p>
       </div>
+      <div class="battle-button-container">
       <button class="battle-button">Battle!</button>
-    </div>
+      </div>
     <script src="app.js"></script>
   </body>
 </html>

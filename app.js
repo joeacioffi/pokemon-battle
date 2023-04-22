@@ -20,42 +20,46 @@ async function displayPokemon(pokemon, element) {
   const specialDefense = data.stats[4].base_stat;
   const speed = data.stats[5].base_stat;
 
-  element.style.backgroundImage = `url(${sprite})`;
-  element.innerHTML = `
-    <h2>${name}</h2>
-    <ul>
-      <li>HP: ${hp}</li>
-      <li>Attack: ${attack}</li>
-      <li>Defense: ${defense}</li>
-      <li>Special Attack: ${specialAttack}</li>
-      <li>Special Defense: ${specialDefense}</li>
-      <li>Speed: ${speed}</li>
-    </ul>
+  const spriteElement = element.querySelector('.pokemon-sprite');
+  spriteElement.style.backgroundImage = `url(${sprite})`;
+
+  const nameElement = element.querySelector('.pokemon-name');
+  nameElement.textContent = name;
+
+  const statsElement = element.querySelector('.pokemon-stats');
+  statsElement.innerHTML = ''; // Clear any existing content
+
+  const statsList = document.createElement('ul');
+  statsList.innerHTML = `
+    <li>HP: ${hp}</li>
+    <li>Attack: ${attack}</li>
+    <li>Defense: ${defense}</li>
+    <li>Special Attack: ${specialAttack}</li>
+    <li>Special Defense: ${specialDefense}</li>
+    <li>Speed: ${speed}</li>
   `;
+  statsElement.appendChild(statsList);
 }
+
 
 function getRandomPokemonId() {
   return Math.floor(Math.random() * 898) + 1;
 }
 
 async function generateBlurb(pokemon1Name, pokemon2Name) {
-  const response = await fetch('https://api.openai.com/v1/engine/davinci-codex/completions', {
+  const response = await fetch('/api/openai', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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', // Replace with your OpenAI API key
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      prompt: `Who would win in a battle between ${pokemon1Name} and ${pokemon2Name}?`,
-      max_tokens: 128,
-      temperature: 0.7,
-      n: 1,
-      stop: '###',
+      prompt: `Who would win in a battle between ${pokemon1Name} and ${pokemon2Name}?`
     }),
   });
 
   const data = await response.json();
-  const blurb = data.choices[0].text.trim();
+  const blurb = data.winner.trim();
+  console.log(data);
   return blurb;
 }
 

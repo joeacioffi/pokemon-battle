@@ -1,0 +1,15 @@
+{
+  "name": "pokemon-battle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Cioffi",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy-middleware": "^2.0.6",
+    "openai": "^3.2.1"
+  }
+}
