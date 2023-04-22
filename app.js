@@ -46,7 +46,11 @@ function getRandomPokemonId() {
   return Math.floor(Math.random() * 898) + 1;
 }
 
+
+
 async function generateBlurb(pokemon1Name, pokemon2Name) {
+  document.querySelector('.result').innerHTML = '';
+  document.getElementById("loading-circle").style.display = "block";
   const response = await fetch('/api/openai', {
     method: 'POST',
     headers: {
@@ -59,9 +63,11 @@ async function generateBlurb(pokemon1Name, pokemon2Name) {
 
   const data = await response.json();
   const blurb = data.winner.trim();
-  console.log(data);
+  document.getElementById("loading-circle").style.display = "none";
   return blurb;
 }
+
+
 
 async function startBattle() {
   const pokemon1Id = getRandomPokemonId();
