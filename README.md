@@ -3,7 +3,7 @@ The Pokemon Battle app pits two random pokemon against each other then asks Chat
 
 **Link to project:** http://pokemon.joecioffi.dev/
 
-![alt tag](https://ibb.co/Qppk5Ck)
+<a href="https://ibb.co/Qppk5Ck"><img src="https://i.ibb.co/Qppk5Ck/Screen-Shot-2023-04-25-at-3-33-25-PM.png" alt="Screen-Shot-2023-04-25-at-3-33-25-PM" border="0"></a>
 
 ## How It's Made:
 
